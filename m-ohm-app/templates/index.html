@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kafka Dashboard</title>
+    <link rel="stylesheet" href="static/index.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="static/dashboard_icon.ico">
+</head>
+<body>
+    <div id="loader" class="center"></div>
+    <div id="center-container" class="center-container" style="display: none;">
+        <!--<div id="timestamp"></div>-->
+        <div class="card-row">
+            <div class="card-col-item top">
+                <div>
+                    <div class="component-name" id="cpu-name">CPU</div>
+                </div>
+                <div class="card-info">
+                    <div class="circular-progress" id="cpu-percent-progress">
+                        <span class="progress-value" id="cpu-percent-value">0%</span>
+                    </div>
+                    <div class="card-info-details">
+                        <div class="details">
+                            <div class="progress-container">
+                                <div class="progress-bar" id="cpu-temperature-progress"></div>
+                            </div>
+                            <div class="key-value">
+                                <div>Temp</div>
+                                <div id="cpu-temperature-value">-1 °C</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-col-item top">
+                <div>
+                    <div class="component-name" id="gpu-name">GPU</div>
+                </div>
+                <div class="card-info">
+                    <div class="circular-progress" id="gpu-percent-progress">
+                        <span class="progress-value" id="gpu-percent-value">0%</span>
+                    </div>
+                    <div class="card-info-details">
+                        <div class="details">
+                            <div class="progress-container">
+                                <div class="progress-bar" id="gpu-temperature-progress"></div>
+                            </div>
+                            <div class="key-value">
+                                <div>Temperature</div>
+                                <div id="gpu-temperature-value">-1 °C</div>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <div class="progress-container">
+                                <div class="progress-bar" id="gpu-memory-progress"></div>
+                            </div>
+                            <div class="key-value">
+                                <div>Memory</div>
+                                <div id="gpu-memory-value">-1 MB</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-row">
+            <div class="card-col-item bot">
+                <div>
+                    <div class="component-name">RAM</div>
+                </div>
+                <div class="card-info ram">
+                    <div class="circular-progress ram" id="ram-percent-progress">
+                        <span class="progress-value" id="ram-percent-value">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-col-item bot">
+                <div>
+                    <div class="component-name">HDD</div>
+                </div>
+                <div class="card-info">
+                    <div id="card-info-details-disk" class="card-info-details-bot">
+                    </div>
+                </div>
+            </div>
+            <div class="card-col-item bot">
+                <div>
+                    <div class="component-name">System Information</div>
+                </div>
+                <div class="card-info">
+                    <div class="card-info-details-bot">
+                        <div style="margin-left: 80px; font-size: x-large; margin-top: 35px; color: red;">In Progress ...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById("center-container").style.display = "flex";
+            document.getElementById("loader").style.display = "none";
+
+        }, 2000)
+    </script>
+    <script type="text/javascript" src="static/index.js"></script>
+</body>
+</html>
